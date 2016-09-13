@@ -2,3 +2,6 @@
 
 - name: Clone 'The Harvester' git repo
   git: repo=https://github.com/laramies/theHarvester.git clone=yes dest=/opt/theHarvester
+
+- name: Install 'The Harvester' prerequisites
+  package: name=python-requests state=latest
