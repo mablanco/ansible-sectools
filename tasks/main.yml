@@ -1,2 +1,6 @@
 ---
 # tasks file for mablanco.sectools
+
+- name: Install 'The Harvester'
+  include: the_harvester.yml
+  when: the_harvester
