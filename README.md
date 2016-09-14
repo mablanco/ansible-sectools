@@ -1,38 +1,37 @@
 mablanco.sectools
-=========
+=
 
-Role to install several security related tools on a Linux system
-
-Requirements
-------------
-
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+Ansible role to install several security related tools on a Linux system. Initially, this role will work on Debian platforms and will be adapted to other distros in the future.
 
 Role Variables
---------------
+-
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+The following variables control whether a tool is installed (*true*) or not (*false*). 
 
-Dependencies
-------------
+- **the_harvester**: 'The Harvester' is a gathering information tool about an URL.
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
 
 Example Playbook
-----------------
+-
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+Example of how to use this role:
 
-    - hosts: servers
+    - hosts: sec_nodes
+      vars:
+         the_harvester: true
       roles:
-         - { role: username.rolename, x: 42 }
+         - { role: mablanco.sectools }
+
+TODO
+-
+- Add lots of tools!!!
 
 License
--------
+-
 
-BSD
+GPLv3
 
 Author Information
-------------------
+-
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+Marco Antonio Blanco <mablanco@correolibre.eu>
