@@ -34,4 +34,4 @@ GPLv3
 Author Information
 -
 
-Marco Antonio Blanco <mablanco@correolibre.eu>
+Marco Antonio Blanco
