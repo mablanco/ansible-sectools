@@ -13,6 +13,6 @@
 
 - name: The Harvester | Create link to main script
   file:
-    path: /usr/local/bin/theHarvester.py
+    path: /usr/local/bin/theHarvester
     state: link
     src: /opt/theHarvester/theHarvester.py
