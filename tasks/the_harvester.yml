@@ -10,3 +10,9 @@
   file:
     path: /opt/theHarvester/theHarvester.py
     mode: 0755
+
+- name: The Harvester | Create link to main script
+  file:
+    path: /usr/local/bin/theHarvester.py
+    state: link
+    src: /opt/theHarvester/theHarvester.py
