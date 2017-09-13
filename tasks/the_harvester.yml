@@ -1,12 +1,12 @@
 ---
 
-- name: Clone 'The Harvester' git repo
+- name: The Harvester | Clone git repo
   git: repo=https://github.com/laramies/theHarvester.git clone=yes dest=/opt/theHarvester
 
-- name: Install 'The Harvester' prerequisites
+- name: The Harvester | Install prerequisites
   package: name=python-requests state=latest
 
-- name: Make tool executable
+- name: The Harvester | Make main script executable
   file:
     path: /opt/theHarvester.py
     mode: 0755
