@@ -8,5 +8,5 @@
 
 - name: The Harvester | Make main script executable
   file:
-    path: /opt/theHarvester.py
+    path: /opt/theHarvester/theHarvester.py
     mode: 0755
