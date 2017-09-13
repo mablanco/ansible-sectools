@@ -2,3 +2,4 @@
 # defaults file for mablanco.sectools
 
 the_harvester: false
+golismero: false

@@ -1,0 +1,33 @@
+---
+
+- name: GoLismero | Clone git repo
+  git: repo=https://github.com/golismero/golismero.git clone=yes force=yes dest=/opt/GoLismero
+
+- name: GoLismero | Install prerrequisites
+  package: name={{ item }} state=latest
+  with_items:
+    - python-pip
+    - python-virtualenv
+    - nmap
+    - sslscan
+
+- name: GoLismero | Get pip requirements
+  command: cat /opt/GoLismero/requirements.txt /opt/GoLismero/requirements_unix.txt
+  register: requirements
+
+- name: GoLismero | Install pip requirements
+  pip:
+    name: "{{item}}"
+  with_items:
+  - "{{ requirements.stdout_lines }}"
+
+- name: GoLismero | Make main script executable
+  file:
+    path: /opt/GoLismero/golismero.py
+    mode: 0755
+
+- name: GoLismero | Create link to main script
+  file:
+    path: /usr/local/bin/golismero
+    state: link
+    src: /opt/GoLismero/golismero.py
