@@ -25,10 +25,10 @@ Example of how to use this role:
       roles:
          - { role: mablanco.sectools }
 
-##TODO
+## TODO
 
 - Add lots of tools!!!
 
-##License
+## License
 
 GPLv3
