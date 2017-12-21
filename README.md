@@ -11,6 +11,7 @@ The following variables control whether a tool is installed (*true*) or not (*fa
 
 - **the_harvester**: 'The Harvester' is a gathering information tool about an URL.
 - **golismero**: 'GoLismero' is an open source framework for security testing.
+- **reconscan**: 'ReconScan' is a set of network reconnaissance and vulnerability assessment tools.
 
 ## Example Playbook
 
@@ -20,6 +21,7 @@ Example of how to use this role:
       vars:
          the_harvester: true
          golismero: true
+         reconscan: true
       roles:
          - { role: mablanco.sectools }
 

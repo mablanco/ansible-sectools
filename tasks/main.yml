@@ -8,3 +8,7 @@
 - name: Install 'GoLismero'
   include: golismero.yml
   when: golismero
+
+- name: Install 'ReconScan'
+  include: reconscan.yml
+  when: reconscan

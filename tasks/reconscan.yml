@@ -1,0 +1,57 @@
+---
+
+- name: ReconScan | Clone git repo
+  git:
+    repo: https://github.com/RoliSoft/ReconScan.git
+    dest: /opt/ReconScan
+    clone: yes
+    force: yes
+
+- name: ReconScan | Install prerrequisites
+  package:
+    name: "{{ item }}"
+    state: latest
+  with_items:
+    - python3-pip
+    - nmap
+    - nikto
+    - hydra
+
+- name: ReconScan | Install DIRB (Debian)
+  apt:
+    deb: "http://ftp.de.debian.org/debian/pool/main/d/dirb/dirb_2.22+dfsg-2_amd64.deb"
+    state: present
+  when: ansible_os_family == 'Debian'
+
+- name: ReconScan | Install DIRB (RedHat)
+  yum:
+    name: "http://www6.atomicorp.com/channels/atomic/centos/7/x86_64/RPMS/dirb-222-2742.el7.art.x86_64.rpm"
+    state: present
+  when: ansible_os_family == 'RedHat'
+
+- name: ReconScan | Install pip requirements
+  pip:
+    executable: pip3
+    state: present
+    name: "{{item}}"
+  with_items:
+  - python-libnmap
+  - colorama
+  - lxml
+
+- name: ReconScan | Make scripts executable
+  file:
+    path: "/opt/ReconScan/{{ item }}"
+    mode: 0755
+  with_items:
+    - recon.py
+    - vulnscan.py
+
+- name: ReconScan | Create links to scripts
+  file:
+    path: "/usr/local/bin/{{ item }}"
+    state: link
+    src: "/opt/ReconScan/{{ item }}.py"
+  with_items:
+    - recon
+    - vulnscan
