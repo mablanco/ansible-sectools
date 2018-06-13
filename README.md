@@ -1,6 +1,6 @@
 # mablanco.sectools
 
-Ansible role to install several security related tools on a Linux system. Initially, this role will work on Debian platforms and will be adapted to other distros in the future.
+Ansible role to install several security related tools on a Linux system. This role only supports modern Debian platforms.
 
 ## Requirements
 - git CLI client
