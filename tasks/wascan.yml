@@ -1,0 +1,37 @@
+---
+
+- name: WAScan | Clone git repo
+  git:
+    repo: https://github.com/m4ll0k/WAScan.git
+    dest: /opt/wascan
+    clone: yes
+    force: yes
+
+- name: WAScan | Install prerrequisites
+  package:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - python-pip
+
+- name: WAScan | Install pip requirements
+  pip:
+    executable: pip
+    state: present
+    chdir: "/opt/wascan"
+    requirements: requirements.txt
+
+- name: WAScan | Make scripts executable
+  file:
+    path: "/opt/wascan/{{ item }}"
+    mode: 0755
+  with_items:
+    - wascan.py
+
+- name: WAScan | Create links to scripts
+  file:
+    path: "/usr/local/bin/{{ item }}"
+    state: link
+    src: "/opt/wascan/{{ item }}.py"
+  with_items:
+    - wascan

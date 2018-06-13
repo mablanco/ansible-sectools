@@ -12,3 +12,7 @@
 - name: Install 'ReconScan'
   include: reconscan.yml
   when: reconscan
+
+- name: Install 'WAScan'
+  include: wascan.yml
+  when: wascan

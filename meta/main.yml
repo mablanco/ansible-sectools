@@ -1,7 +1,7 @@
 galaxy_info:
   author: Marco Antonio Blanco
   description: Deployment of assorted security tools
-  license: license GPLv3
+  license: GPLv3
   min_ansible_version: 2.0
   platforms:
   - name: GenericUNIX
@@ -12,8 +12,7 @@ galaxy_info:
     versions:
     - all
     - any
-
   galaxy_tags:
     - security
-
+    - pentesting
 dependencies: []
