@@ -7,12 +7,17 @@
     clone: yes
     force: yes
 
+- name: ReconScan | Install PIP3
+  easy_install:
+    name: pip
+    executable: easy_install3
+    state: latest
+
 - name: ReconScan | Install prerrequisites
   package:
     name: "{{ item }}"
     state: latest
   with_items:
-    - python3-pip
     - nmap
     - nikto
     - hydra
