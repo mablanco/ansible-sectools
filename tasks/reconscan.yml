@@ -22,18 +22,6 @@
     - nikto
     - hydra
 
-- name: ReconScan | Install DIRB (Debian)
-  apt:
-    deb: "http://ftp.de.debian.org/debian/pool/main/d/dirb/dirb_2.22+dfsg-2_amd64.deb"
-    state: present
-  when: ansible_os_family == 'Debian'
-
-- name: ReconScan | Install DIRB (RedHat)
-  yum:
-    name: "http://www6.atomicorp.com/channels/atomic/centos/7/x86_64/RPMS/dirb-222-2742.el7.art.x86_64.rpm"
-    state: present
-  when: ansible_os_family == 'RedHat'
-
 - name: ReconScan | Install pip requirements
   pip:
     executable: pip3
