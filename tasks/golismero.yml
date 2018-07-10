@@ -6,10 +6,16 @@
 - name: GoLismero | Install prerrequisites
   package: name={{ item }} state=latest
   with_items:
-    - python-pip
-    - python-virtualenv
     - nmap
     - sslscan
+
+- name: GoLismero | Install PIP & Virtualenv
+  easy_install:
+    name: "{{ item }}"
+    state: latest
+  with_items:
+    - pip
+    - virtualenv
 
 - name: GoLismero | Install pip requirements
   pip:
