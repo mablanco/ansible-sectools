@@ -1,10 +1,16 @@
 ---
 
 - name: GoLismero | Clone git repo
-  git: repo=https://github.com/golismero/golismero.git clone=yes force=yes dest=/opt/GoLismero
+  git:
+    repo: https://github.com/golismero/golismero.git
+    dest: /opt/GoLismero
+    clone: yes
+    force: yes
 
 - name: GoLismero | Install prerrequisites
-  package: name={{ item }} state=latest
+  package:
+    name: "{{ item }}"
+    state: latest
   with_items:
     - nmap
     - sslscan
