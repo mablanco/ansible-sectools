@@ -7,19 +7,15 @@
     clone: yes
     force: yes
 
-- name: WAScan | Install prerrequisites
-  package:
-    name: "{{ item }}"
-    state: present
-  with_items:
-    - python-pip
+- name: WAScan | Install PIP
+  easy_install:
+    name: pip
+    state: latest
 
 - name: WAScan | Install pip requirements
   pip:
-    executable: pip
+    requirements: /opt/wascan/requirements.txt
     state: present
-    chdir: "/opt/wascan"
-    requirements: requirements.txt
 
 - name: WAScan | Make scripts executable
   file:
