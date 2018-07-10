@@ -11,15 +11,13 @@
     - nmap
     - sslscan
 
-- name: GoLismero | Get pip requirements
-  command: cat /opt/GoLismero/requirements.txt /opt/GoLismero/requirements_unix.txt
-  register: requirements
-
 - name: GoLismero | Install pip requirements
   pip:
-    name: "{{item}}"
+    requirements: "{{ item }}"
+    state: present
   with_items:
-  - "{{ requirements.stdout_lines }}"
+    - /opt/GoLismero/requirements.txt
+    - /opt/GoLismero/requirements_unix.txt
 
 - name: GoLismero | Make main script executable
   file:
