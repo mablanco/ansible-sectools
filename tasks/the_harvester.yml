@@ -1,10 +1,16 @@
 ---
 
 - name: The Harvester | Clone git repo
-  git: repo=https://github.com/laramies/theHarvester.git clone=yes force=yes dest=/opt/theHarvester
+  git:
+    repo: https://github.com/laramies/theHarvester.git
+    clone: yes
+    force: yes
+    dest: /opt/theHarvester
 
-- name: The Harvester | Install prerequisites
-  package: name=python-requests state=latest
+- name: The Harvester | Install pip requisites
+  pip:
+    name: requests
+    state: present
 
 - name: The Harvester | Make main script executable
   file:
