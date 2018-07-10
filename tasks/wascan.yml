@@ -17,17 +17,13 @@
     requirements: /opt/wascan/requirements.txt
     state: present
 
-- name: WAScan | Make scripts executable
+- name: WAScan | Make main script executable
   file:
-    path: "/opt/wascan/{{ item }}"
+    path: /opt/wascan/wascan.py
     mode: 0755
-  with_items:
-    - wascan.py
 
-- name: WAScan | Create links to scripts
+- name: WAScan | Create link to main script
   file:
-    path: "/usr/local/bin/{{ item }}"
+    path: /usr/local/bin/wascan
     state: link
-    src: "/opt/wascan/{{ item }}.py"
-  with_items:
-    - wascan
+    src: /opt/wascan/wascan.py
