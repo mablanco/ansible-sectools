@@ -7,6 +7,11 @@
     force: yes
     dest: /opt/theHarvester
 
+- name: WAScan | Install PIP
+  easy_install:
+    name: pip
+    state: latest
+
 - name: The Harvester | Install pip requisites
   pip:
     name: requests
