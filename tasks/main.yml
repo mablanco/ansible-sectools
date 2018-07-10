@@ -16,3 +16,7 @@
 - name: Install 'WAScan'
   include: wascan.yml
   when: wascan
+
+- name: Install 'ssh-audit'
+  include: ssh-audit.yml
+  when: ssh_audit
