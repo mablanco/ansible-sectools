@@ -1,7 +1,12 @@
 ---
 
 - name: ssh-audit | Clone git repo
-  git: repo=https://github.com/arthepsy/ssh-audit.git clone=yes force=yes dest=/opt/ssh-audit
+  git:
+    repo: https://github.com/arthepsy/ssh-audit.git
+    dest: /opt/ssh-audit
+    clone: yes
+    force: yes
+    depth: 1
 
 - name: ssh-audit | Make main script executable
   file:

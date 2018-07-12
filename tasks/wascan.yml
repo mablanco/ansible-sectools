@@ -6,6 +6,7 @@
     dest: /opt/wascan
     clone: yes
     force: yes
+    depth: 1
 
 - name: WAScan | Install pip requirements
   pip:

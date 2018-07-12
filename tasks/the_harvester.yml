@@ -3,9 +3,10 @@
 - name: The Harvester | Clone git repo
   git:
     repo: https://github.com/laramies/theHarvester.git
+    dest: /opt/theHarvester
     clone: yes
     force: yes
-    dest: /opt/theHarvester
+    depth: 1
 
 - name: The Harvester | Install pip requisites
   pip:

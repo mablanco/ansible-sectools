@@ -6,6 +6,7 @@
     dest: /opt/ReconScan
     clone: yes
     force: yes
+    depth: 1
 
 - name: ReconScan | Install prerrequisites
   package:
