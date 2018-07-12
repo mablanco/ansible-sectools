@@ -5,8 +5,10 @@ Ansible role to install several security related tools on a Linux system. This r
 ## Requirements
 - git CLI client
 - Python 2.6+ or 3.x
+- PIP & Virtualenv (for both Python 2 and 3). You can optionally install them with this role (read below)
 
 ## Role Variables
+If you need/want to install PIP and Virtualenv with this role, give the **install_pip** variable a *true* value.
 
 The following variables control whether a tool is installed (*true*) or not (*false*).
 

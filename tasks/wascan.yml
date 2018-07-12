@@ -7,11 +7,6 @@
     clone: yes
     force: yes
 
-- name: WAScan | Install PIP
-  easy_install:
-    name: pip
-    state: latest
-
 - name: WAScan | Install pip requirements
   pip:
     requirements: /opt/wascan/requirements.txt

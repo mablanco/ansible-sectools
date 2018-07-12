@@ -15,14 +15,6 @@
     - nmap
     - sslscan
 
-- name: GoLismero | Install PIP & Virtualenv
-  easy_install:
-    name: "{{ item }}"
-    state: latest
-  with_items:
-    - pip
-    - virtualenv
-
 - name: GoLismero | Install pip requirements
   pip:
     requirements: "{{ item }}"
