@@ -1,0 +1,20 @@
+---
+
+- name: testssl.sh | Clone git repo
+  git:
+    repo: https://github.com/drwetter/testssl.sh.git
+    dest: /opt/testssl
+    clone: yes
+    force: yes
+    depth: 1
+
+- name: testssl.sh | Make main script executable
+  file:
+    path: /opt/testssl/testssl.sh
+    mode: 0755
+
+- name: testssl.sh | Create link to main script
+  file:
+    path: /usr/local/bin/testssl.sh
+    state: link
+    src: /opt/testssl/testssl.sh

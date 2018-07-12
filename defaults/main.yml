@@ -7,3 +7,4 @@ golismero: false
 reconscan: false
 wascan: false
 ssh_audit: false
+testssl: false

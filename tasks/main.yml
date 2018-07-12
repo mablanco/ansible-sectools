@@ -24,3 +24,7 @@
 - name: Install 'ssh-audit'
   include: ssh-audit.yml
   when: ssh_audit
+
+- name: Install 'testssl.sh'
+  include: testssl.yml
+  when: testssl

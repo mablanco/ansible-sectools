@@ -17,6 +17,7 @@ The following variables control whether a tool is installed (*true*) or not (*fa
 - **reconscan**: 'ReconScan' is a set of network reconnaissance and vulnerability assessment tools.
 - **wascan**: 'WAScan' is a web application security scanner using "black-box" methods.
 - **ssh_audit**: 'ssh-audit' is a tool for ssh server auditing.
+- **testssl**: 'testssl.sh' is a tool for SSL ciphers and protocols auditing.
 
 ## Example Playbook
 
