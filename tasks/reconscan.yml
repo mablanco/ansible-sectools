@@ -10,22 +10,20 @@
 
 - name: ReconScan | Install prerrequisites
   package:
-    name: "{{ item }}"
+    name:
+      - nmap
+      - nikto
+      - hydra
     state: latest
-  with_items:
-    - nmap
-    - nikto
-    - hydra
 
 - name: ReconScan | Install pip requirements
   pip:
     executable: pip3
+    name:
+    - python-libnmap
+    - colorama
+    - lxml
     state: present
-    name: "{{item}}"
-  with_items:
-  - python-libnmap
-  - colorama
-  - lxml
 
 - name: ReconScan | Make scripts executable
   file:
