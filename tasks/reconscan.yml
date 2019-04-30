@@ -14,7 +14,7 @@
       - nmap
       - nikto
       - hydra
-    state: latest
+    state: present
 
 - name: ReconScan | Install pip requirements
   pip:

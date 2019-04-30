@@ -13,7 +13,7 @@
     name:
       - nmap
       - sslscan
-    state: latest
+    state: present
 
 - name: GoLismero | Install pip requirements
   pip:
