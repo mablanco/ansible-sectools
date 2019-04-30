@@ -10,7 +10,7 @@
 
 - name: WAScan | Install pip requirements
   pip:
-    requirements: /opt/wascan/requirements.txt
+    name: BeautifulSoup
     state: present
 
 - name: WAScan | Make main script executable
