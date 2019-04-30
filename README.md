@@ -5,11 +5,9 @@ Ansible role to install several security testing and auditing tools on a Linux s
 ## Requirements
 - git CLI client
 - Python 2.6+ or 3.x & Setuptools
-- PIP & Virtualenv (for both Python 2 and 3). You can optionally install them with this role (read below)
+- PIP & Virtualenv (for both Python 2 and 3)
 
 ## Role Variables
-If you need/want to install PIP and Virtualenv with this role, give the **install_pip** variable a *true* value. Make sure that `easy_install` (part of Python Setuptools) is already available in the host.
-
 The following variables control whether a tool is installed (*true*) or not (*false*).
 
 - **golismero**: 'GoLismero' is an open source framework for security testing.

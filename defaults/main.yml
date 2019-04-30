@@ -1,7 +1,6 @@
 ---
 # defaults file for mablanco.sectools
 
-install_pip: false
 golismero: false
 reconscan: false
 wascan: false
