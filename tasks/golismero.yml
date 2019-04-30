@@ -17,10 +17,11 @@
 
 - name: GoLismero | Install pip requirements
   pip:
-    requirements:
-      - /opt/GoLismero/requirements.txt
-      - /opt/GoLismero/requirements_unix.txt
+    requirements: "{{ item }}"
     state: present
+  with_items:
+    - /opt/GoLismero/requirements.txt
+    - /opt/GoLismero/requirements_unix.txt
 
 - name: GoLismero | Make main script executable
   file:
