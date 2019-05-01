@@ -15,7 +15,7 @@ The following variables control whether a tool is installed (*true*) or not (*fa
 - **wascan**: 'WAScan' is a web application security scanner using "black-box" methods.
 - **ssh_audit**: 'ssh-audit' is a tool for ssh server auditing.
 - **testssl**: 'testssl.sh' is a tool for SSL ciphers and protocols auditing.
-- **prompem**: 'Pompem' is an open source tool designed to automate the search for Exploits and Vulnerability in the most important databases.
+- **pompem**: 'Pompem' is an open source tool designed to automate the search for Exploits and Vulnerability in the most important databases.
 
 ## Example Playbook
 
