@@ -20,3 +20,7 @@
 - name: Install 'testssl.sh'
   include: testssl.yml
   when: testssl
+
+- name: Install 'Pompem'
+  include: pompem.yml
+  when: pompem

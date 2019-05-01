@@ -6,3 +6,4 @@ reconscan: false
 wascan: false
 ssh_audit: false
 testssl: false
+pompem: false

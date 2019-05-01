@@ -1,0 +1,25 @@
+---
+
+- name: Pompem | Clone git repo
+  git:
+    repo: https://github.com/rfunix/Pompem.git
+    dest: /opt/Pompem
+    clone: yes
+    force: yes
+    depth: 1
+
+- name: Pompem | Install pip requirements
+  pip:
+    requirements: "/opt/Pompem/requirements.txt"
+    state: present
+
+- name: Pompem | Make main script executable
+  file:
+    path: /opt/Pompem/pompem.py
+    mode: 0755
+
+- name: Pompem | Create link to main script
+  file:
+    path: /usr/local/bin/pompem
+    state: link
+    src: /opt/Pompem/pompem.py
