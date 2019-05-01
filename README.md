@@ -4,7 +4,7 @@ Ansible role to install several security testing and auditing tools on a Linux s
 
 ## Requirements
 - git CLI client
-- Python 2.6+ or 3.x & Setuptools
+- Python 2.6+ and 3.5+ & Setuptools
 - PIP & Virtualenv (for both Python 2 and 3)
 
 ## Role Variables
