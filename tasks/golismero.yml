@@ -8,12 +8,16 @@
     force: yes
     depth: 1
 
-- name: GoLismero | Install prerrequisites
+- name: GoLismero | Install nmap
   package:
-    name:
-      - nmap
-      - sslscan
+    name: nmap
     state: present
+
+- name: GoLismero | Install sslscan
+  package:
+    name: sslscan
+    state: present
+  when: ansible_lsb.codename not in [ "buster" ]
 
 - name: GoLismero | Install pip requirements
   pip:
