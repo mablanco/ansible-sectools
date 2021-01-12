@@ -3,24 +3,24 @@
 
 - name: Install 'GoLismero'
   include: golismero.yml
-  when: golismero
+  when: golismero | bool
 
 - name: Install 'ReconScan'
   include: reconscan.yml
-  when: reconscan
+  when: reconscan | bool
 
 - name: Install 'WAScan'
   include: wascan.yml
-  when: wascan
+  when: wascan | bool
 
 - name: Install 'ssh-audit'
   include: ssh-audit.yml
-  when: ssh_audit
+  when: ssh_audit | bool
 
 - name: Install 'testssl.sh'
   include: testssl.yml
-  when: testssl
+  when: testssl | bool
 
 - name: Install 'Pompem'
   include: pompem.yml
-  when: pompem
+  when: pompem | bool
