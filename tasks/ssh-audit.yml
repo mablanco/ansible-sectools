@@ -5,7 +5,7 @@
     repo: https://github.com/arthepsy/ssh-audit.git
     dest: /opt/ssh-audit
     clone: yes
-    force: yes
+    force: no
     depth: 1
 
 - name: ssh-audit | Make main script executable

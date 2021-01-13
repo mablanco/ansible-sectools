@@ -5,7 +5,7 @@
     repo: https://github.com/drwetter/testssl.sh.git
     dest: /opt/testssl
     clone: yes
-    force: yes
+    force: no
     depth: 1
 
 - name: testssl.sh | Make main script executable
