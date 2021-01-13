@@ -7,6 +7,7 @@
     clone: yes
     force: no
     depth: 1
+    version: master
 
 - name: ReconScan | Install prerrequisites
   package:
